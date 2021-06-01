@@ -6,6 +6,10 @@ public class Car {
     Tire [] tires = new Tire[4];
     static Engine engine;
 
+    Car(){
+        fuel = 0;
+    }
+
     Car(Tire[] tires , Engine engine){
         fuel = 0;
         this.tires = tires;
