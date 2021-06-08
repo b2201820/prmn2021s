@@ -8,14 +8,14 @@ public class Exercise3_2 {
         int i;
 
         System.out.println("何行分入力しますか？");
-        Scanner scanner1 = new Scanner(System.in);
-        int input1 = scanner1.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int input1 = scanner.nextInt();
+        scanner.nextLine();
 
         ArrayList<String> mojiretsu = new ArrayList<>();
         for(i = 0;i < input1;i++) {
             System.out.println(i+1 + "行目");
-            Scanner scanner2 = new Scanner(System.in);
-            String input2 = scanner2.nextLine();
+            String input2 = scanner.nextLine();
             mojiretsu.add(input2);
         }
 

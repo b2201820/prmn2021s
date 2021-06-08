@@ -12,9 +12,8 @@ public class Exercise3_4 {
         Vegetable potato = new Vegetable("じゃがいも", 154);
         vegetable.add(potato);
 
-
-
-
-
+        for (Vegetable vegetables : vegetable) {
+            vegetables.print();
+        }
     }
 }
