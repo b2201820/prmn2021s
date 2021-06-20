@@ -7,7 +7,7 @@ public class ATM {
     static ArrayList<Account> accountList = new ArrayList<>();
 
     ATM() {
-
+        //this.accounts = new ArrayList<>();
     }
 
     public static void registerAccount(String name, String number) {
@@ -19,8 +19,8 @@ public class ATM {
         boolean data = false;
 
         for (Account accounts : accountList) {
-            if (accounts.name == name) {
-                if (accounts.number == number) {
+            if (accounts.getName() == name) {
+                if (accounts.getNumber() == number) {
                     data = true;
                 }
             }
@@ -30,8 +30,8 @@ public class ATM {
 
     public static void deposit(String number, long money) {
         for (Account accounts : accountList) {
-            if (accounts.number == number) {
-                Account.balance += money;
+            if (accounts.getNumber() == number) {
+                accounts.setBalance(accounts.getBalance() + money);
                 System.out.println("口座番号:" + number + " に " + money + " 円入金しました。");
             }
         }
@@ -39,24 +39,25 @@ public class ATM {
 
     public static long withdraw(String number, long money) {
         for (Account accounts : accountList) {
-            if (accounts.number == number) {
+            if (accounts.getNumber() == number) {
                 while(true) {
-                    if (Account.balance < money) {
+                    if (accounts.getBalance() < money) {
                         System.out.print("口座番号:" + number + " から " + money + " 円引き出せませんでした。");
-                        System.out.println("残高:" + Account.balance + "円です。");
+                        System.out.println("残高:" + accounts.getBalance() + "円です。");
                         Scanner scanner = new Scanner(System.in);
                         money = scanner.nextLong();
                     }
                     else {
                         System.out.print("口座番号:" + number + " から " + money + " 円引き出しました。");
-                        System.out.println("残高:" + Account.balance + "円です。");
-                        Account.balance -= money;
+                        accounts.setBalance(accounts.getBalance() - money);
+                        System.out.println("残高:" + accounts.getBalance() + "円です。");
+                        accounts.getBalance();
                         break;
                     }
                 }
             }
         }
 
-        return Account.balance;
+        return 0;
     }
 }

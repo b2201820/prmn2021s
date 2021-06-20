@@ -12,9 +12,9 @@ public class Fighter {
     }
 
     public void attack(Fighter enemy){
-        enemy.hitPoint -= power;
+        enemy.setHitPoint(enemy.gethitPoint() - this.power);
 
-        System.out.println(name + "　は　" + enemy.name + "　に　" + power + "　ダメージを与えた。");
+        System.out.println(this.name + "　は　" + enemy.name + "　に　" + this.power + "　ダメージを与えた。");
     }
 
     public boolean isAlive(){
