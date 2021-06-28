@@ -13,7 +13,7 @@ public class Exercise6_2 {
 
         int i;
         for(i = 0;i < 5;i++){
-            IntegerList.add(random.nextInt(5) + 1);
+            IntegerList.add(random.nextInt(6) + 1);
         }
         System.out.println("さいころを" + i + "つ振りました。");
         System.out.println("何番目のさいころの値を確認しますか？");
